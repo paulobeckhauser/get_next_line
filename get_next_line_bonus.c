@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabeckha <pabeckha@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:00:01 by pabeckha          #+#    #+#             */
-/*   Updated: 2023/12/12 17:15:04 by pabeckha         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:58:55 by pabeckha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-static char	*filling_line(int fd, char *stash, char *buffer);
-static char	*update_stash(char *line);
+char		*filling_line(int fd, char *stash, char *buffer);
+char	*update_stash(char *line);
 
 char	*get_next_line(int fd)
 {
@@ -41,7 +41,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-static char	*filling_line(int fd, char *stash, char *buffer)
+char	*filling_line(int fd, char *stash, char *buffer)
 {
 	ssize_t	bytes_read;
 	char	*temp;
@@ -70,7 +70,7 @@ static char	*filling_line(int fd, char *stash, char *buffer)
 	return (stash);
 }
 
-static char	*update_stash(char *line)
+char	*update_stash(char *line)
 {
 	char	*stash;
 	ssize_t	i;
