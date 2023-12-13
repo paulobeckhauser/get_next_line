@@ -6,7 +6,7 @@
 /*   By: pabeckha <pabeckha@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:00:03 by pabeckha          #+#    #+#             */
-/*   Updated: 2023/12/12 18:57:50 by pabeckha         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:22:49 by pabeckha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 3
 # endif
+
+# define MAX_FD 10240
 
 # include <stdlib.h>
 # include <unistd.h>

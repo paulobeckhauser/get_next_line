@@ -6,11 +6,11 @@
 /*   By: pabeckha <pabeckha@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:59:59 by pabeckha          #+#    #+#             */
-/*   Updated: 2023/12/12 18:58:10 by pabeckha         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:14:58 by pabeckha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strdup(const char *s1)
 {

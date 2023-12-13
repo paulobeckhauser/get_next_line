@@ -6,18 +6,18 @@
 /*   By: pabeckha <pabeckha@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:00:01 by pabeckha          #+#    #+#             */
-/*   Updated: 2023/12/12 18:58:55 by pabeckha         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:21:15 by pabeckha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char		*filling_line(int fd, char *stash, char *buffer);
+char	*filling_line(int fd, char *stash, char *buffer);
 char	*update_stash(char *line);
 
 char	*get_next_line(int fd)
 {
-	static char	*stash;
+	static char	*stash[MAX_FD];
 	char		*line;
 	char		*buffer;
 
@@ -25,19 +25,19 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
 		free(buffer);
-		free(stash);
+		free(stash[fd]);
 		buffer = NULL;
-		stash = NULL;
+		stash[fd] = NULL;
 		return (NULL);
 	}
 	if (!buffer)
 		return (NULL);
-	line = filling_line(fd, stash, buffer);
+	line = filling_line(fd, stash[fd], buffer);
 	free(buffer);
 	buffer = NULL;
 	if (!line)
 		return (NULL);
-	stash = update_stash(line);
+	stash[fd] = update_stash(line);
 	return (line);
 }
 
