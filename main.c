@@ -6,7 +6,7 @@
 /*   By: pabeckha <pabeckha@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 18:59:00 by pabeckha          #+#    #+#             */
-/*   Updated: 2023/12/09 15:16:14 by pabeckha         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:28:56 by pabeckha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 	int		count;
 
 	count = 0;
-	fd = open("example.txt", O_RDONLY);
+	fd = open("lines_around_10.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		printf("Error opening File!");
@@ -29,7 +29,7 @@ int	main(void)
 	}
 	while (1)
 	{
-		next_line = get_next_line(fd);
+		next_line = get_next_line(3);
 		if (next_line == NULL)
 			break ;
 		count++;
